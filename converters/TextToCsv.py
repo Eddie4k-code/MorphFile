@@ -21,3 +21,5 @@ class TextToCsvConverter(BaseConverter):
             writer = csv.writer(outfile)
             writer.writerows(lines)
 
+            return outfile
+
