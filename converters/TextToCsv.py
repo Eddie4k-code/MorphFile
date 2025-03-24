@@ -5,8 +5,6 @@ import csv
 
 class TextToCsvConverter(BaseConverter):
 
-
-
     def convert(self, input_file, output_file):
         """
         Convert a text file to a CSV file.

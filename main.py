@@ -1,4 +1,5 @@
 from converters.TextToCsv import TextToCsvConverter
+from converters.HTMLToPdf import HTMLToPdf
 
 
-TextToCsvConverter().convert("input.txt", "output.csv")
+HTMLToPdf().convert("input.html", "output.pdf")
