@@ -11,7 +11,7 @@ class ConverterFactory:
         """
         Creates a converter instance based on the specified type.
 
-        :param converter_type: The type of converter to create (e.g., 'json', 'xml').
+        :param converter_type: The type of converter to create (e.g., 'txt_to_csv').
         :return: An instance of the specified converter.
         """
         if converter_type == 'txt_to_csv':

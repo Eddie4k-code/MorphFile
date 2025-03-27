@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 BaseConverter is an abstract base class for all converters.
 """
 
-class BaseConverter:
+class BaseConverter(ABC):
     @abstractmethod
     def convert(self, input_file: str, output_file: str):
         """

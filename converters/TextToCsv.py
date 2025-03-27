@@ -1,5 +1,6 @@
 
 from converters.BaseConverter import BaseConverter
+import threading
 
 import csv
 
@@ -21,3 +22,9 @@ class TextToCsvConverter(BaseConverter):
 
             return outfile
 
+    def convert_in_thread(self, input_file, output_file):
+        """
+        Convert a text file to a CSV file in a separate thread.
+        """
+        thread = threading.Thread(target=self.convert, args=(input_file, output_file))
+        thread.start()
