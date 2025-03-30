@@ -1,7 +1,12 @@
 module "cluster" {
     source = "./cluster"
-    clusters = var.clusters
+
+    providers = {
+        aws.east = aws.east
+    }
+
     environment = var.environment
+    ecs_config = var.ecs_config
 }
 
 

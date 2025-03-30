@@ -9,13 +9,5 @@ module "us-east-1" {
 
 
 locals {
-  #debugging purposes
-
-   # Fetch Configurations defined in the YAML file for the environment
-    configurations = yamldecode(file("./prod/prod.yml"))
-
-    # Group the configurations by resource type for easier access
-    configurations_by_resource = [
-        for obj in local.configurations : obj
-    ]
+ 
 }

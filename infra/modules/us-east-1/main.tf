@@ -11,8 +11,17 @@ locals {
 /* Creation of ecs clusters, tasks, etc */
 module "ecs" {
     source = "../ecs"
-    clusters = try(local.configurations_by_resource["ecs_cluster"], [])
+
     providers = {
-        aws = aws.east
+        aws.east = aws.east
     }
+
+
+    for_each = {for cluster in local.configurations_by_resource["ecs"] : 
+        cluster.name => cluster
+    }
+
+    # Pass the clusters and environment configurations to the ECS module
+    ecs_config = each.value
+    environment = var.environment
 }

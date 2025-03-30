@@ -4,8 +4,8 @@ variable "environment" {
   default     = "prod"
 }
 
-variable "clusters" {
-  description = "A list of ECS cluster names to be created"
-  type        = list(map(any))
+variable "ecs_config" {
+  description = "The ECS configuration details"
+  type        = any
   default     = []  
 }

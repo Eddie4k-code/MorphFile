@@ -1,19 +1,14 @@
 locals {
 
-    clusters_mapped = {
-        for cluster in var.clusters : cluster.name => cluster
-    }
-
 }
 
 
-resource "aws_ecs_cluster" "clusters" {
-    for_each = local.clusters_mapped
+resource "aws_ecs_cluster" "cluster" {
 
-    name = each.value.name
+    name = var.ecs_config.name
 
     tags = {
         Environment = var.environment
-        Name        = each.value.name
+        Name        = var.ecs_config["name"] 
     }
 }
