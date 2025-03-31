@@ -3,3 +3,4 @@
   task_definitions:
     - name: production-task
       image: myapp:latest
+      family: test

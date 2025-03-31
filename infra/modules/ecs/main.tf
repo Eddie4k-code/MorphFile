@@ -10,6 +10,23 @@ module "cluster" {
 }
 
 
+module "task_definition" {
+    source = "./task_definition"
+
+    for_each = {
+        for task in try(var.ecs_config.task_definitions, []) : 
+          task.name => task
+    }
+
+    task_definition = each.value
+
+    providers = {
+        aws.east = aws.east
+    }
+}
+
+
+
 
 
 
