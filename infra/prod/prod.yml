@@ -1,6 +1,5 @@
-- resource: ecs
-  name: production-cluster
-  task_definitions:
-    - name: production-task
-      image: myapp:latest
-      family: test
+- resource: render_project
+  name: MorphFile
+  environments:
+    - name: prod
+      protected_status: unprotected

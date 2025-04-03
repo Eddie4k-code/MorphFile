@@ -1,11 +1,11 @@
-variable "AWS_ACCESS_KEY_ID" {
-    type = string
-    description = "AWS Access Key ID for authentication"
-    sensitive = true
+variable "environment" {
+    description = "The environment for which the infrastructure is being deployed (e.g., dev, staging, prod)"
+    type        = string
+    default     = "prod" # Default value can be overridden when running Terraform
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
-    type = string
-    description = "AWS Secret Access Key for authentication"
+
+variable "conn_str" {
+    description = "connection string for postgres database"
     sensitive = true
 }
