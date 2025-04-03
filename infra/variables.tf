@@ -3,3 +3,9 @@ variable "environment" {
     type        = string
     default     = "prod" # Default value can be overridden when running Terraform
 }
+
+variable "api_key" {
+    description = "API key for Render provider"
+    type        = string
+    sensitive   = true # Mark as sensitive to avoid logging the value in Terraform output
+}

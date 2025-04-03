@@ -12,6 +12,8 @@ jobs:
   terraform:
     name: 'Terraform'
     environment: prod
+    env:
+      TF_VAR_api_key: ${{ secrets.API_KEY }} 
     runs-on: ubuntu-latest
     defaults:
       run:
