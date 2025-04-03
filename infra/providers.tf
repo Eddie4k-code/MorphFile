@@ -13,5 +13,4 @@ terraform {
 
 provider "render" {
   api_key = var.api_key
-  owner_id = "eddie4k"
 }
