@@ -12,8 +12,6 @@ jobs:
   terraform:
     name: 'Terraform'
     environment: prod
-    env:
-      TF_VAR_conn_str: ${{ secrets.CONN_STR }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,7 +26,8 @@ jobs:
           terraform_version: '1.5.7' # Specify the Terraform version
 
       - name: Initialize Terraform
-        run: terraform init
+        run: terraform init \
+          -backend-config="conn_str=${{ secrets.CONN_STR }}"
 
       - name: Validate Terraform
         run: terraform validate
