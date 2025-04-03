@@ -9,3 +9,9 @@ variable "api_key" {
     type        = string
     sensitive   = true # Mark as sensitive to avoid logging the value in Terraform output
 }
+
+variable "owner_id" {
+    description = "Owner ID for the resources"
+    type        = string
+    default     = "default_owner" 
+}
