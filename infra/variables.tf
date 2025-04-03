@@ -3,9 +3,3 @@ variable "environment" {
     type        = string
     default     = "prod" # Default value can be overridden when running Terraform
 }
-
-
-variable "conn_str" {
-    description = "connection string for postgres database"
-    sensitive = true
-}
