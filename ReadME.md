@@ -1,6 +1,6 @@
 # MorphFile
 
-![Production](https://img.shields.io/badge/status-production-green)
+![Production](https://github.com/Eddie4k-code/MorphFile/deployments/prod)
 
 Supported
 - TXT -> CSV
