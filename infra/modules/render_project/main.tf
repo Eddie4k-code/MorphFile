@@ -20,6 +20,7 @@ module "private_services" {
 
     project_name = render_project.project.name
 
+    environment_id = "${render_project.project.name}/${each.key}" 
     services = each.value.services
 
     depends_on = [ 

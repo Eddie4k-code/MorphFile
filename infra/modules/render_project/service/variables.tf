@@ -4,7 +4,6 @@ variable "services" {
         name        = string
         plan        = string
         region      = string
-        environment_id = string
     }))
     default     = []
     sensitive   = false
@@ -12,6 +11,13 @@ variable "services" {
 
 variable "project_name" {
     description = "The name of the Render project to which the services belong."
+    type        = string
+    default     = ""
+    sensitive   = false
+}
+
+variable "environment_id" {
+    description = "The environment ID for the Render project."
     type        = string
     default     = ""
     sensitive   = false

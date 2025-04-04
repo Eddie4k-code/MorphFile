@@ -4,4 +4,5 @@ resource "render_private_service" "service" {
     name     = each.value.name
     plan     = each.value.plan
     runtime_source = each.value.runtime_source
+    environment_id = var.environment_id
 }
