@@ -2,10 +2,7 @@
 locals {
     envs_mapped = {
         for env in var.render_project.environments :
-        env.name => {
-            name = env.name
-            protected_status = env.protected_status
-        }
+        env.name => env
     }
 }
 
