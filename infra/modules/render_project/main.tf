@@ -23,7 +23,7 @@ module "private_services" {
 
     project_name = render_project.project.name
 
-    services = each.value.name.services 
+    services = each.value.services
 
     depends_on = [ 
         render_project.project
