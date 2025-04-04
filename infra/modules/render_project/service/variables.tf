@@ -4,6 +4,7 @@ variable "services" {
         name        = string
         plan        = string
         region      = string
+        runtime_source = map(any)
     }))
     default     = []
     sensitive   = false
