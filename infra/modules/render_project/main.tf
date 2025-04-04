@@ -16,3 +16,16 @@ resource "render_project" "project" {
     environments = local.envs_mapped
     
 }
+
+module "private_services" {
+    source = "./service" 
+    for_each = local.envs_mapped
+
+    project_name = render_project.project.name
+
+    services = each.value.name.services 
+
+    depends_on = [ 
+        render_project.project
+    ]
+}
