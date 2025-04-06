@@ -19,6 +19,8 @@ module "private_services" {
     for_each = local.envs_mapped
 
     project_name = render_project.project.name
+
+    environment_id = "${render_project.project.name}/${each.key}" 
     
     services = each.value.services
 
