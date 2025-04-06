@@ -9,7 +9,7 @@
           plan: free
           runtime_source:
             docker:
-              branch_url: https://github.com/Eddie4k-code/MorphFile
+              repo_url: https://github.com/Eddie4k-code/MorphFile
               branch: master
               dockerfile_path: ./python/Dockerfile
 
