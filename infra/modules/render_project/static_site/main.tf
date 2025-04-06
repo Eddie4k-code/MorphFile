@@ -4,6 +4,6 @@ resource "render_static_site" "static_site" {
     name = each.value.name
     repo_url = each.value.repo_url
     build_command = each.value.build_command
-    publish_path = each.value.publish_directory
+    publish_path = each.value.publish_path
     branch = each.value.branch
 }
