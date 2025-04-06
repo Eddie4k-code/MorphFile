@@ -17,9 +17,3 @@ variable "project_name" {
     sensitive   = false
 }
 
-variable "environment_id" {
-    description = "The environment ID for the Render project."
-    type        = string
-    default     = ""
-    sensitive   = false
-}
