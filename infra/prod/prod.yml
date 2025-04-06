@@ -4,7 +4,7 @@
     - name: prod
       protected_status: unprotected
       services:
-        - name: backend_service_morphfile
+        - name: backend_service_api
           region: ohio
           plan: starter
           runtime_source:
@@ -12,5 +12,6 @@
               repo_url: https://github.com/Eddie4k-code/MorphFile
               branch: master
               dockerfile_path: ./python/Dockerfile
+              context: ./python
 
             
