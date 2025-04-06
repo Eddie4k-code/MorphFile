@@ -6,4 +6,5 @@ resource "render_static_site" "static_site" {
     build_command = each.value.build_command
     publish_path = each.value.publish_path
     branch = each.value.branch
+    root_directory = each.value.publish_directory
 }
