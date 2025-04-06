@@ -4,7 +4,7 @@
     - name: prod
       protected_status: unprotected
       services:
-        - name: backend_service
+        - name: backend_service_morphfile
           region: ohio
           plan: starter
           runtime_source:
