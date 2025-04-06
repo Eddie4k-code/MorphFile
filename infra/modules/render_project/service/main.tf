@@ -1,4 +1,4 @@
-resource "render_private_service" "service" {
+resource "render_web_service" "service" {
     for_each = {for s in var.services : s.name => s}
     region   = each.value.region
     name     = each.value.name
