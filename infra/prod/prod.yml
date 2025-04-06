@@ -6,7 +6,7 @@
       services:
         - name: backend_service
           region: ohio
-          plan: starter
+          plan: free
           runtime_source:
             docker:
               repo_url: https://github.com/Eddie4k-code/MorphFile
