@@ -13,5 +13,12 @@
               branch: master
               dockerfile_path: ./python/Dockerfile
               context: ./python
+      static_sites:
+        - name: frontend_morphfile
+          repo_url: https://github.com/Eddie4k-code/MorphFile
+          branch: master
+          publish_path: ./frontend/build
+          build_command: yarn build
+
 
             

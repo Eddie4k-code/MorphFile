@@ -28,3 +28,16 @@ module "private_services" {
         render_project.project
     ]
 }
+
+
+module "static_sites" {
+   for_each = local.envs_mapped
+
+    source = "./static_site"
+
+    static_sites = each.value.static_sites
+
+    depends_on = [
+        render_project.project
+    ]
+}
