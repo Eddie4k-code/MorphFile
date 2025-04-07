@@ -14,7 +14,7 @@
               dockerfile_path: ./python/Dockerfile
               context: ./python
           secrets:
-            - name: FILE_CONVETER_API_SECRET
+            - name: FILE_CONVERTER_API_SECRET
       static_sites:
         - name: frontend_morphfile
           repo_url: https://github.com/Eddie4k-code/MorphFile

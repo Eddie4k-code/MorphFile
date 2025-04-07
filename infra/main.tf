@@ -8,8 +8,8 @@ locals {
 
     /* A map of secrets that are injected via ci / cd */
     secrets_map = {
-        BACKEND_API_URL = var.BACKEND_API_URL
-        FILE_CONVERTER_API_SECRET = var.FILE_CONVERTER_API_SECRET
+        "BACKEND_API_URL" : var.BACKEND_API_URL
+        "FILE_CONVERTER_API_SECRET" : var.FILE_CONVERTER_API_SECRET
     }
 }
 
