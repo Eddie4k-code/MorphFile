@@ -5,7 +5,10 @@ variable "services" {
         plan        = string
         region      = string
         runtime_source = map(any)
-        secrets = map(any)
+        secrets = list(object({
+            name = string
+            # You can add more attributes if needed for the secrets
+        })) # This should be a list of objects with at least a 'name' attribute
     }))
     default     = []
     sensitive   = false
