@@ -30,7 +30,7 @@ export default function App() {
     formData.append("conversion", conversion);
 
     try {
-      const response = await fetch("http://localhost:8000/convert", {
+      const response = await fetch(import.meta.env.BACKEND_API_URL, {
         method: "POST",
         body: formData,
       });

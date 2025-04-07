@@ -13,6 +13,8 @@
               branch: master
               dockerfile_path: ./python/Dockerfile
               context: ./python
+          secrets:
+            - name: FILE_CONVETER_API_SECRET
       static_sites:
         - name: frontend_morphfile
           repo_url: https://github.com/Eddie4k-code/MorphFile
@@ -20,6 +22,9 @@
           root_directory: ./frontend
           publish_path: ./dist
           build_command: npm run build
+          secrets:
+            - name: BACKEND_API_URL
+
 
 
             

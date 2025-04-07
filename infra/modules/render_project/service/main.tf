@@ -4,4 +4,9 @@ resource "render_web_service" "service" {
     name     = each.value.name
     plan     = each.value.plan
     runtime_source = each.value.runtime_source
+    env_vars = {
+        for secret in each.value.secrets :
+        secret.name => 
+            var.secrets_map[secret.name] != null ? var.secrets_map[secret.name] : ""
+    }
 }

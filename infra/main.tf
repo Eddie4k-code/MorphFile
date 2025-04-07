@@ -5,6 +5,12 @@ locals {
     configurations_by_resource = {
         for obj in local.configurations : obj.resource => obj...
     }
+
+    /* A map of secrets that are injected via ci / cd */
+    secrets_map = {
+        BACKEND_API_URL = var.BACKEND_API_URL
+        FILE_CONVERTER_API_SECRET = var.FILE_CONVERTER_API_SECRET
+    }
 }
 
 /* Creation of ecs clusters, tasks, etc */
@@ -18,6 +24,9 @@ module "render_project" {
         }
 
     render_project = each.value
+
+
+    secrets_map = local.secrets_map
 
     providers = {
         render = render

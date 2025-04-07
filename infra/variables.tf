@@ -15,3 +15,15 @@ variable "owner_id" {
     type        = string
     default     = "default_owner" 
 }
+
+variable "BACKEND_API_URL" {
+    type = string
+    description = "The backend API URL to be used in the Render project"
+    default = ""
+}
+
+variable "FILE_CONVERTER_API_SECRET" {
+    type = string
+    description = "The secret for the file converter API"
+    default = ""
+}

@@ -1,3 +1,8 @@
+locals {
+    
+}
+
+
 resource "render_static_site" "static_site" {
     for_each = {for static_site in var.static_sites : static_site.name => static_site}
 
@@ -7,4 +12,10 @@ resource "render_static_site" "static_site" {
     publish_path = each.value.publish_path
     branch = each.value.branch
     root_directory = each.value.root_directory
+    env_vars = {
+        for secret in each.value.secrets :
+        secret.name => 
+            var.secrets_map[secret.name] != null ? var.secrets_map[secret.name] : ""
+}
+
 }

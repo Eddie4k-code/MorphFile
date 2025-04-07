@@ -17,3 +17,10 @@ variable "project_name" {
     sensitive   = false
 }
 
+variable "secrets_map" {
+    description = "A map of secrets to be used in the services"
+    type        = map(string)
+    default     = {}
+    sensitive   = true
+}
+

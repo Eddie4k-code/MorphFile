@@ -4,6 +4,8 @@ locals {
         for env in var.render_project.environments :
         env.name => env
     }
+
+
 }
 
 resource "render_project" "project" {
@@ -19,6 +21,8 @@ module "private_services" {
     for_each = local.envs_mapped
 
     project_name = render_project.project.name
+
+    secrets_map = var.secrets_map
 
 
     
@@ -36,6 +40,8 @@ module "static_sites" {
     source = "./static_site"
 
     static_sites = each.value.static_sites
+
+    secrets_map = var.secrets_map
 
     depends_on = [
         render_project.project
