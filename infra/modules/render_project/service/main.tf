@@ -6,7 +6,9 @@ resource "render_web_service" "service" {
     runtime_source = each.value.runtime_source
     env_vars = {
         for secret in each.value.secrets :
-        secret.name => var.secrets_map[secret.name]
+        secret.name => {
+            value = var.secrets_map[secret.name]
+        }
 }
 
 }

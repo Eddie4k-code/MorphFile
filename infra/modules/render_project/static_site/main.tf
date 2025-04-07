@@ -14,7 +14,9 @@ resource "render_static_site" "static_site" {
     root_directory = each.value.root_directory
     env_vars = {
         for secret in each.value.secrets :
-        secret.name => var.secrets_map[secret.name]
+        secret.name => {
+            value = var.secrets_map[secret.name]
+        }
 }
 
 }
