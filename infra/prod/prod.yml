@@ -18,7 +18,7 @@
           repo_url: https://github.com/Eddie4k-code/MorphFile
           branch: master
           root_directory: ./frontend
-          publish_path: ./build
+          publish_path: ./dist
           build_command: npm run build
 
 
