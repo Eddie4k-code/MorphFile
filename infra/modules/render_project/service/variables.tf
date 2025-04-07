@@ -5,6 +5,7 @@ variable "services" {
         plan        = string
         region      = string
         runtime_source = map(any)
+        secrets = map(any)
     }))
     default     = []
     sensitive   = false
