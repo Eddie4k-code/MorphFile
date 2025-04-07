@@ -30,7 +30,7 @@ export default function App() {
     formData.append("conversion", conversion);
 
     try {
-      const response = await fetch(import.meta.env.BACKEND_API_URL, {
+      const response = await fetch("https://backend-service-api-x03s.onrender.com/convert", {
         method: "POST",
         body: formData,
       });
